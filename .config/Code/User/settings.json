@@ -8,6 +8,12 @@
     "files.trimTrailingWhitespace": true,
 
     "git.confirmSync": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "gitlens.defaultDateFormat": "YYYY MM DD hh:mm:ss",
+    "gitlens.defaultDateShortFormat": "YYYY MM DD hh:mm:ss",
+    "gitlens.defaultTimeFormat": "hh:mm:ss",
+    "gitlens.defaultDateStyle": "absolute",
 
     "projectManager.git.baseFolders": [
         "~/projects"
