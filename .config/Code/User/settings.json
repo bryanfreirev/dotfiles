@@ -1,0 +1,13 @@
+{
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.minimap.enabled": false,
+
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+
+    "git.confirmSync": false,
+    "workbench.colorTheme": "Quiet Light",
+    "workbench.startupEditor": "none",
+}
