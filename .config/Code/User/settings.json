@@ -8,6 +8,13 @@
     "files.trimTrailingWhitespace": true,
 
     "git.confirmSync": false,
+
+    "projectManager.git.baseFolders": [
+        "~/projects"
+    ],
+    "projectManager.git.maxDepthRecursion": 2,
+    "projectManager.ignoreProjectsWithinProjects": true,
+
     "workbench.colorTheme": "Quiet Light",
     "workbench.startupEditor": "none",
 }
