@@ -1,8 +1,10 @@
-venvfolder='~/.virtualenvs/$(basename $PWD)'
-alias w="source $venvfolder/bin/activate"
-alias wc5="virtualenv -p python3.5 $venvfolder"
-alias wc7="virtualenv -p python3.7 $venvfolder"
-alias wc8="virtualenv -p python3.8 $venvfolder"
+alias vim='vim.gtk3'
+
+# venvfolder='~/.virtualenvs/$(basename $PWD)'
+alias w="source $VENVFOLDER/bin/activate"
+alias wc5="virtualenv -p python3.5 $VENVFOLDER"
+alias wc7="virtualenv -p python3.7 $VENVFOLDER"
+alias wc8="virtualenv -p python3.8 $VENVFOLDER"
 alias we='deactivate'
 
 alias t='pytest --no-cov -x'
