@@ -31,6 +31,7 @@ set nobackup
 set wildignore+=.git,__pycache__,.*cache,*.egg-info
 set clipboard=unnamedplus
 set completeopt+=longest,menuone,preview
+set backspace=indent,eol,start
 
 syntax on
 filetype plugin on
@@ -42,11 +43,10 @@ let mapleader = "\<Space>"                                              " space 
 nnoremap <leader>J <S-j>
 nnoremap <S-k> <C-u>
 nnoremap <S-j> <C-d>
-vnoremap <S-k> <C-u>
-vnoremap <S-j> <C-d>
 
 nnoremap <leader>a :Ack!<Space>
 nnoremap <leader>e :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+nnoremap <leader><S-e> :NERDTreeFind<CR>
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>g :G<CR>
 map <leader>h <Plug>(easymotion-b)
@@ -55,37 +55,25 @@ nnoremap <leader>I :split<CR>
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
 map <leader>l <Plug>(easymotion-w)
+nnoremap <leader><S-n> :tabnew<CR>
 nnoremap <leader>n :tabnext<CR>
 nnoremap <leader>p :tabprevious<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 
 " plugins
-let g:tmux_navigator_save_on_switch = 2                                 " save when change tmux window
-
+"
+" ack.vim
 let g:ackprg = 'ag --vimgrep'                                           " use ag instead of ack
-
-let g:tagbar_autoclose = 1                                              " close tagbar on enter
-let g:tagbar_autofocus = 1                                              " autofocus on tagbar
-
-let g:EasyMotion_do_mapping = 0                                         " Disable default Mappings
-let g:EasyMotion_smartcase = 1                                          " Turn on case-insensitive feature
-
-let NERDTreeQuitOnOpen = 3                                              " quit on open file or bookmark
-let NERDTreeMinimalUI = 1                                               " remove help message in nerdtree
-let NERDTreeRespectWildIgnore = 1                                       " use vim wildignore
-let NERDTreeShowHidden = 1                                              " show hidden files in nerdtree
-au BufEnter NERD_tree_* if winnr('$') == 1 && b:NERDTree.isTabTree() | q | endif " close if nerd tree is the last buffer
-au BufEnter NERD_tree_* if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif " dont let others to use nerdtree buffer
-
+" ale
 let g:ale_completion_enabled = 1
 let g:ale_completion_autoimport = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\}                                                                      " removes the trailing spaces
+\}
 let g:ale_linters = {
 \   'python': ['pyls'],
-\}                                                                      " pyls uses  flake8 and mypy
+\}
 let g:ale_python_pyls_config = {
 \   'pyls': {
 \       'configurationSources': ['flake8'],
@@ -93,4 +81,24 @@ let g:ale_python_pyls_config = {
 \           'pyls_mypy': { 'enabled': v:true, 'live_mode': v:false }
 \       }
 \   }
-\}                                                                      " pyls config
+\}
+" ctrlp.vim
+" nerdtree
+let NERDTreeQuitOnOpen = 3                                              " quit on open file or bookmark
+let NERDTreeMinimalUI = 1                                               " remove help message in nerdtree
+let NERDTreeRespectWildIgnore = 1                                       " use vim wildignore
+let NERDTreeShowHidden = 1                                              " show hidden files in nerdtree
+au BufEnter NERD_tree_* if winnr('$') == 1 && b:NERDTree.isTabTree() | q | endif " close if nerd tree is the last buffer
+au BufEnter NERD_tree_* if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif " dont let others to use nerdtree buffer
+" tagbar
+let g:tagbar_autoclose = 1                                              " close tagbar on enter
+let g:tagbar_autofocus = 1                                              " autofocus on tagbar
+" vim-commentary
+" vim-easymotion
+let g:EasyMotion_do_mapping = 0                                         " Disable default Mappings
+let g:EasyMotion_smartcase = 1                                          " Turn on case-insensitive feature
+" vim-fugitive
+" vim-gitgutter
+" vim-surround
+" vim-tmux-navigator
+let g:tmux_navigator_save_on_switch = 2                                 " save when change tmux window
