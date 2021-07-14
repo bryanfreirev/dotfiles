@@ -36,6 +36,7 @@ set backspace=indent,eol,start
 syntax on
 filetype plugin on
 " autocmd bufwritepost .vimrc source $MYVIMRC
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
 
 " Mappings
 let mapleader = "\<Space>"                                              " space as leader
