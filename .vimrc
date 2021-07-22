@@ -51,15 +51,16 @@ nnoremap <leader><S-e> :NERDTreeFind<CR>
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>g :G<CR>
 map <leader>h <Plug>(easymotion-b)
-nnoremap <leader>i :vsplit<CR>
-nnoremap <leader>I :split<CR>
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
 map <leader>l <Plug>(easymotion-w)
-nnoremap <leader><S-n> :tabnew<CR>
-nnoremap <leader>n :tabnext<CR>
-nnoremap <leader>p :tabprevious<CR>
 nnoremap <leader>t :TagbarToggle<CR>
+
+nnoremap <C-w>s :vsplit<CR>
+nnoremap <C-w>v :split<CR>
+nnoremap <C-w>t :tabnew<CR>
+nnoremap <C-w>n :tabnext<CR>
+nnoremap <C-w>p :tabprevious<CR>
 
 " plugins
 "

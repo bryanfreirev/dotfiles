@@ -1,6 +1,5 @@
 alias vim='vim.gtk3'
 
-# venvfolder='~/.virtualenvs/$(basename $PWD)'
 alias w="source $VENVFOLDER/bin/activate"
 alias wc5="virtualenv -p python3.5 $VENVFOLDER"
 alias wc7="virtualenv -p python3.7 $VENVFOLDER"
