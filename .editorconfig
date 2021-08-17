@@ -1,0 +1,12 @@
+root = true
+
+[*]
+end_of_line = lf
+
+[*.{go,py}]
+indent_style = space
+indent_size = 4
+
+[*.{cfg,json,yaml,yml}]
+indent_style = space
+indent_size = 2

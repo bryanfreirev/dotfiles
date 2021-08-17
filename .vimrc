@@ -2,12 +2,7 @@
 set nocompatible
 
 set autoindent                                                          " automatic indentation
-set expandtab                                                           "
-set shiftround
-set shiftwidth=4
-set smarttab
-set tabstop=4
-set textwidth=200
+set shiftround								" when shifting, round to shiftwidth multilpy
 
 set background=light
 set number
@@ -28,7 +23,7 @@ set smartcase
 set noswapfile
 set nobackup
 
-set wildignore+=.git,__pycache__,.*cache,*.egg-info
+set wildignore=.git,__pycache__,.*cache,*.egg-info
 set clipboard=unnamedplus
 set completeopt+=longest,menuone,preview
 set backspace=indent,eol,start
@@ -85,6 +80,7 @@ let g:ale_python_pyls_config = {
 \   }
 \}
 " ctrlp.vim
+" editorconfig
 " nerdtree
 let NERDTreeQuitOnOpen = 3                                              " quit on open file or bookmark
 let NERDTreeMinimalUI = 1                                               " remove help message in nerdtree
