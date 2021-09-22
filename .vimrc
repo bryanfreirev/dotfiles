@@ -27,6 +27,8 @@ set wildignore=.git,__pycache__,.*cache,*.egg-info
 set clipboard=unnamedplus
 set completeopt+=longest,menuone,preview
 set backspace=indent,eol,start
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
 
 syntax on
 filetype plugin on
@@ -44,7 +46,11 @@ nnoremap <leader>a :Ack!<Space>
 nnoremap <leader>e :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 nnoremap <leader><S-e> :NERDTreeFind<CR>
 nnoremap <leader>f :CtrlP<CR>
-nnoremap <leader>g :G<CR>
+nnoremap <leader>gg :G<CR>
+nnoremap <leader>gn :cnext<CR>
+nnoremap <leader>gp :cprevious<CR>
+nnoremap <leader>dg :diffget<CR>
+nnoremap <leader>dp :diffput<CR>
 map <leader>h <Plug>(easymotion-b)
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
@@ -56,6 +62,17 @@ nnoremap <C-w>v :split<CR>
 nnoremap <C-w>t :tabnew<CR>
 nnoremap <C-w>n :tabnext<CR>
 nnoremap <C-w>p :tabprevious<CR>
+
+" theme
+set background=light
+let g:PaperColor_Theme_Options = {
+\   'theme': {
+\     'default': {
+\       'transparent_background': 1
+\     }
+\   }
+\ }
+colorscheme PaperColor
 
 " plugins
 "
@@ -74,9 +91,6 @@ let g:ale_linters = {
 let g:ale_python_pyls_config = {
 \   'pyls': {
 \       'configurationSources': ['flake8'],
-\       'plugins': {
-\           'pyls_mypy': { 'enabled': v:true, 'live_mode': v:false }
-\       }
 \   }
 \}
 " ctrlp.vim
@@ -91,12 +105,42 @@ au BufEnter NERD_tree_* if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ '
 " tagbar
 let g:tagbar_autoclose = 1                                              " close tagbar on enter
 let g:tagbar_autofocus = 1                                              " autofocus on tagbar
+
 " vim-commentary
 " vim-easymotion
 let g:EasyMotion_do_mapping = 0                                         " Disable default Mappings
 let g:EasyMotion_smartcase = 1                                          " Turn on case-insensitive feature
 " vim-fugitive
+autocmd User fugitive 							" Use .. to go to parent object
+\ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+\   nnoremap <buffer> .. :edit %:h<CR> |
+\ endif
+autocmd BufReadPost fugitive://* set bufhidden=delete			" Delete fugitive buffers
 " vim-gitgutter
 " vim-surround
 " vim-tmux-navigator
 let g:tmux_navigator_save_on_switch = 2                                 " save when change tmux window
+" Goyo
+let g:goyo_width = 120
+function! s:goyo_enter()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  endif
+  set noshowmode
+  set noshowcmd
+  "set scrolloff=999
+endfunction
+
+function! s:goyo_leave()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status on
+    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  endif
+  set showmode
+  set showcmd
+  "set scrolloff=5
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
