@@ -1,10 +1,11 @@
 # Managing virtualenvs
 alias w="source $VENVFOLDER/bin/activate"
-alias wc5="virtualenv -p python3.5 $VENVFOLDER"
-alias wc7="virtualenv -p python3.7 $VENVFOLDER"
-alias wc8="virtualenv -p python3.8 $VENVFOLDER"
+alias wc5="python3.5 -m venv $VENVFOLDER"
+alias wc7="python3.7 -m venv $VENVFOLDER"
+alias wc8="python3.8 -m venv $VENVFOLDER"
+alias wc10="python3.10 -m venv $VENVFOLDER"
 alias we='deactivate'
 
 # Testing
-alias t='pytest --no-cov -x'
-alias td='pytest --no-cov -x --pdb'
+alias t='python -m pytest --no-cov -x'
+alias td='python -m pytest --no-cov -x --pdb'

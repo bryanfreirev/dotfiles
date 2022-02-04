@@ -1,82 +1,61 @@
 {
-  "editor.foldingImportsByDefault": true,
-
-  "explorer.autoReveal": false,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-
-  "files.autoSave": "off",
+  "breadcrumbs.enabled": false,
+  "customizeUI.activityBar": "bottom",
+  "customizeUI.activityBarHideSettings": true,
+  "customizeUI.font.regular": "monospace",
+  "customizeUI.titleBar": "regular",
+  "customizeUI.moveStatusbar": true,
+  "diffEditor.renderSideBySide": false,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.minimap.enabled": false,
+  "editor.occurrencesHighlight": false,
+  "editor.rulers": [80, 100],
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-
-  "git.autofetch": true,
   "git.confirmSync": false,
-  "git.enableSmartCommit": true,
-  "gitlens.codeLens.enabled": false,
-  "gitlens.defaultDateFormat": "YYYY MM DD hh:mm:ss",
-  "gitlens.defaultDateShortFormat": "YYYY MM DD hh:mm:ss",
-  "gitlens.defaultTimeFormat": "hh:mm:ss",
-  "gitlens.statusBar.enabled": false,
+  "keyboard.dispatch": "keyCode",
+  "search.mode": "reuseEditor",
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "window.enableMenuBarMnemonics": false,
+  "window.menuBarVisibility": "hidden",
+  "window.restoreFullscreen": true,
+  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 20,
 
-  "projectManager.any.baseFolders": [
-    "~/projects/"
-  ],
+  "projectManager.any.baseFolders": ["~/projects/"],
   "projectManager.any.maxDepthRecursion": 1,
 
+  "[python]": {},
+  "python.linting.flake8Enabled": true,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["--no-cov"],
+
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#eea",
   "vim.leader": "<space>",
   "vim.foldfix": true,
-  "vim.hlsearch": true,
-  "vim.incsearch": true,
+  "vim.replaceWithRegister": true,
   "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     { "before": [">"], "after": [">", ">"], "commands": [] },
     { "before": ["<"], "after": ["<", "<"], "commands": [] },
     { "before": ["H"], "after": ["J"], "commands": [] },
     { "before": ["J"], "after": ["2", "0", "j"], "commands": [] },
     { "before": ["K"], "after": ["2", "0", "k"], "commands": [] },
-    { "before": ["<space>"], "after": [], "commands": ["editor.toggleFold"] },
-    { "before": ["<ctrl+space>"], "after": [], "commands": ["editor.foldLevel1"] },
 
+    { "before": ["u"], "after": [], "commands": ["undo"] },
+    { "before": ["U"], "after": [], "commands": ["redo"] },
   ],
-  "vim.insertModeKeyBindingsNonRecursive": [
-    { "before": ["j", "j"], "after": ["<esc>"] }
-  ],
+  "vim.insertModeKeyBindingsNonRecursive": [],
   "vim.visualModeKeyBindingsNonRecursive": [
     { "before": [">"], "after": [">", "g", "v"], "commands": [] },
     { "before": ["<"], "after": ["<", "g", "v"], "commands": [] },
     { "before": ["J"], "after": ["2", "0", "j"], "commands": [] },
-    { "before": ["K"], "after": ["2", "0", "k"], "commands": [] }
+    { "before": ["K"], "after": ["2", "0", "k"], "commands": [] },
   ],
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-b>": false,
-    "<C-f>": false,
-    "<C-w>": false
-  },
-
-  "window.menuBarVisibility": "toggle",
-  "window.restoreFullscreen": true,
-
-  "workbench.colorTheme": "Visual Studio Light",
-  "workbench.startupEditor": "none",
-
-  "auto-close-tag.activationOnLanguage": ["html", "vue", "typescriptreact"],
-
-  "[python]": {},
-  "python.linting.enabled": true,
-  "python.linting.flake8Enabled": true,
-  "python.testing.pytestEnabled": true,
-  "python.testing.pytestArgs": ["-x", "--no-cov"],
-  "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["-S"],
-  "python.venvPath": "~/.virtualenvs",
-
-  "[typescript][typescriptreact]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
-  "tabnine.experimentalAutoImports": true,
-  "python.languageServer": "Jedi",
 }
