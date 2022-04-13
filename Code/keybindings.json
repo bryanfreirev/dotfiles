@@ -4,18 +4,20 @@
   { "key": "f3", "command": "workbench.action.editor.nextChange" },
   { "key": "shift+f3", "command": "editor.action.dirtydiff.next" },
 
+  { "key": "ctrl+r", "command": "editor.action.refactor" },
+
   { "key": "alt+a", "command": "workbench.action.findInFiles" },
 
   { "key": "alt+e", "command": "workbench.action.quickOpen" },
   { "key": "alt+shift+e", "command": "workbench.view.explorer" },
 
-  { "key": "alt+f", "command": "workbench.action.toggleEditorWidths" },
+  // { "key": "alt+f", "command": "workbench.action.toggleEditorWidths" },
   { "key": "alt+f", "command": "workbench.action.toggleMaximizedPanel", "when": "terminalFocus" },
   { "key": "alt+f", "command": "workbench.action.toggleMaximizedPanel", "when": "inDebugRepl && textInputFocus" },
 
-  { "key": "alt+i", "command": "workbench.action.splitEditor" },
+  // { "key": "alt+i", "command": "workbench.action.splitEditor" },
 
-  { "key": "alt+h", "command": "workbench.action.focusPreviousGroup" },
+  // { "key": "alt+h", "command": "workbench.action.focusPreviousGroup" },
 
   { "key": "alt+j", "command": "workbench.action.previousEditorInGroup" },
   { "key": "alt+shift+j", "command": "workbench.action.moveEditorLeftInGroup" },
@@ -27,7 +29,7 @@
   { "key": "alt+k", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus" },
   { "key": "alt+k", "command": "search.focus.previousInputBox", "when": "inSearchEditor && inputBoxFocus" },
 
-  { "key": "alt+l", "command": "workbench.action.focusNextGroup" },
+  // { "key": "alt+l", "command": "workbench.action.focusNextGroup" },
 
   { "key": "alt+m", "command": "workbench.actions.view.problems" },
 
@@ -47,5 +49,5 @@
   // Removed shortcuts
   { "key": "alt+c", "command": "-toggleFindCaseSensitive", "when": "editorFocus" },
   { "key": "alt+r", "command": "-toggleFindRegex", "when": "editorFocus" },
-
+  { "key": "ctrl+j", "command": "-workbench.action.togglePanel" },
 ]

@@ -7,5 +7,5 @@ alias wc10="python3.10 -m venv $VENVFOLDER"
 alias we='deactivate'
 
 # Testing
-alias t='python -m pytest --no-cov -x'
-alias td='python -m pytest --no-cov -x --pdb'
+alias t='pytest --no-cov -x'
+alias td='pytest --no-cov -x --pdb'
