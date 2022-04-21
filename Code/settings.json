@@ -21,11 +21,13 @@
   "keyboard.dispatch": "keyCode",
   "search.mode": "reuseEditor",
   "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "window.enableMenuBarMnemonics": false,
   "window.menuBarVisibility": "hidden",
   "window.restoreFullscreen": true,
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "window.titleBarStyle": "custom",
+  "workbench.activityBar.visible": false,
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 20,
 
@@ -42,11 +44,11 @@
   "python.testing.pytestArgs": ["--no-cov"],
   "[django-html]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "vscode.emmet",
+    "editor.defaultFormatter": "vscode.emmet"
   },
   "[html]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "vscode.emmet",
+    "editor.defaultFormatter": "vscode.emmet"
   },
 
   "vim.highlightedyank.enable": true,
@@ -63,16 +65,15 @@
     { "before": ["K"], "after": ["2", "0", "k"], "commands": [] },
 
     { "before": ["u"], "after": [], "commands": ["undo"] },
-    { "before": ["U"], "after": [], "commands": ["redo"] },
+    { "before": ["U"], "after": [], "commands": ["redo"] }
   ],
   "vim.insertModeKeyBindingsNonRecursive": [],
   "vim.visualModeKeyBindingsNonRecursive": [
     { "before": [">"], "after": [">", "g", "v"], "commands": [] },
     { "before": ["<"], "after": ["<", "g", "v"], "commands": [] },
     { "before": ["J"], "after": ["2", "0", "j"], "commands": [] },
-    { "before": ["K"], "after": ["2", "0", "k"], "commands": [] },
+    { "before": ["K"], "after": ["2", "0", "k"], "commands": [] }
   ],
-  "workbench.activityBar.visible": false,
   "terminal.integrated.tabs.enabled": false,
   "workbench.colorTheme": "Visual Studio Light",
   "python.formatting.blackArgs": [
@@ -81,8 +82,5 @@
   "html.format.templating": true,
   "emmet.includeLanguages": {
     "django-html": "html"
-  },
-  "editor.gotoLocation.multipleDefinitions": "goto",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "window.zoomLevel": 1,
+  }
 }
