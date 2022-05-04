@@ -37,11 +37,5 @@ Return
   else
     WinMaximize, A
 Return
-
-; Applications
-#w:: ; Web
-  Run, chrome.exe
-Return
-#c:: ; Code
-  Run, ..\..\..\AppData\Local\Programs\Microsoft VS Code\Code.exe
+#h::#Left ; Move window to left
 Return
