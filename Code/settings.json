@@ -7,7 +7,6 @@
   "diffEditor.renderSideBySide": false,
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.bracketPairColorization.enabled": true,
-  "editor.fontFamily": "monospace",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.rulers": [80, 100],
