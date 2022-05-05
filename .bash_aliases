@@ -1,5 +1,5 @@
 # Managing virtualenvs
-alias w="source $VENVFOLDER/bin/activate"
+alias w="source $VENVFOLDER/Scripts/activate"
 alias wc8="python3.8 -m venv $VENVFOLDER"
 alias wc9="python3.9 -m venv $VENVFOLDER"
 alias wc10="python3.10 -m venv $VENVFOLDER"
