@@ -9,6 +9,6 @@ export VENVFOLDER='~/.virtualenvs/$(basename $PWD)'
 set -o vi
 
 # read bashrc
-# source ~/.bashrc
+source ~/.bashrc
 source ~/.bash_aliases
-# source ~/.bash_functions
+source ~/.bash_functions

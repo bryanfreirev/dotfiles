@@ -1,3 +1,6 @@
+# neovim
+alias vim=nvim
+
 # Managing virtualenvs
 alias w="source $VENVFOLDER/Scripts/activate"
 alias wc8="python3.8 -m venv $VENVFOLDER"
