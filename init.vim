@@ -7,7 +7,7 @@ set number								" show line number
 set nowrap								" nowrap line when overflow
 set laststatus=2							" show statusline always
 
-set hlsearch								" highlight searches 
+set hlsearch								" highlight searches
 set incsearch								" incremental search
 set smartcase								" insensitive case when no mayus
 
@@ -37,6 +37,22 @@ nnoremap <leader>gp :cprevious<CR>
 nnoremap <leader>dg :diffget<CR>
 nnoremap <leader>dp :diffput<CR>
 
+" camelcase motions
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
+omap <silent> iw <Plug>CamelCaseMotion_iw
+xmap <silent> iw <Plug>CamelCaseMotion_iw
+omap <silent> ib <Plug>CamelCaseMotion_ib
+xmap <silent> ib <Plug>CamelCaseMotion_ib
+omap <silent> ie <Plug>CamelCaseMotion_ie
+xmap <silent> ie <Plug>CamelCaseMotion_ie
+
 " Unused mapping (used by tmux)
 nnoremap <C-w>s :vsplit<CR>
 nnoremap <C-w>v :split<CR>
@@ -47,25 +63,27 @@ nnoremap <C-w>p :tabprevious<CR>
 " plugins
 "
 " ack.vim
+" camelcasemotion
 " ctrlp.vim
-let ctrlp_show_hidden = 1
+let ctrlp_show_hidden = 1                                               " Show hidden files in ctrlp buffer
 " editorconfig
 " nerdtree
 let NERDTreeMinimalUI = 1                                               " remove help message in nerdtree
 let NERDTreeRespectWildIgnore = 1                                       " use vim wildignore
 let NERDTreeShowHidden = 1                                              " show hidden files
-au VimEnter * NERDTree 							" Open NERDTree on startup
+au VimEnter * NERDTree 							                        " Open NERDTree on startup
 au BufEnter NERD_tree_* if winnr('$') == 1 && b:NERDTree.isTabTree() | q | endif " close if nerd tree is the last buffer
 au BufEnter NERD_tree_* if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif " dont let others to use nerdtree buffer
+" textobj-entire
 " vim-fugitive
-" autocmd User fugitive 							" Use .. to go to parent object
-" \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-" \   nnoremap <buffer> .. :edit %:h<CR> |
-" \ endif
-" autocmd BufReadPost fugitive://* set bufhidden=delete			" Delete fugitive buffers
+" vim-airline
+" vim-airline-themes
+let airline_theme='light'                                               " set airline theme
 " vim-commentary
 " vim-gitgutter
 " vim-surround
+" vim-textobj-argument
+" vim-textobj-python
+" vim-textobj-user
 " vim-tmux-navigator
 let tmux_navigator_save_on_switch = 2                                 " save when change tmux window
-
