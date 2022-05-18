@@ -1,12 +1,12 @@
 # neovim
-alias vim=nvim
+alias w=nvim
 
 # Managing virtualenvs
-alias w="source $VENVFOLDER/Scripts/activate"
-alias wc8="python3.8 -m venv $VENVFOLDER"
-alias wc9="python3.9 -m venv $VENVFOLDER"
-alias wc10="python3.10 -m venv $VENVFOLDER"
+alias ww="source ./venv/bin/activate"
 alias we='deactivate'
+alias wc8="python3.8 -m venv venv"
+alias wc9="python3.9 -m venv venv"
+alias wc10="python3.10 -m venv venv"
 
 # Testing
 alias t='pytest --no-cov -x'
