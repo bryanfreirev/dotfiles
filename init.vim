@@ -15,8 +15,7 @@ set nobackup								" no create backup file
 set noswapfile								" no create swap file
 set noundofile								" no create undo file
 
-set wildignore=.git
-set shell=/bin/bash
+set wildignore=.git,venv
 
 " Mappings
 let mapleader = "\<Space>"                                              " space as leader
@@ -26,6 +25,9 @@ nnoremap <S-k> 10k
 nnoremap <S-j> 10j
 vnoremap <S-k> 10k
 vnoremap <S-j> 10j
+
+nnoremap gd :ALEGoToDefinition<cr>
+nnoremap gr :ALERename<cr>
 
 nnoremap <leader>a :Ack!<Space>
 nnoremap <leader>e :NERDTreeFocus<CR>
@@ -63,6 +65,17 @@ nnoremap <C-w>p :tabprevious<CR>
 " plugins
 "
 " ack.vim
+" ale
+set omnifunc=ale#completion#OmniFunc                                    " Set function for completions
+let ale_completion_enabled = 1                                          " Enable ale completion
+let ale_fix_on_save = 1                                                 " Run fixers on save
+let ale_fixers = {
+\ 'python': ['black'],
+\}                                                                      " Set fixers based on filetype
+let ale_linters = {
+\ 'python': ['pylsp', 'flake8'],
+\}                                                                      " Set linters based on filetype
+let ale_python_black_options = '--line-length=79'
 " camelcasemotion
 " ctrlp.vim
 let ctrlp_show_hidden = 1                                               " Show hidden files in ctrlp buffer
