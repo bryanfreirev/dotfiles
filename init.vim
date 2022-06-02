@@ -1,24 +1,29 @@
 " Basic
-syntax on								" enable systax hl
-colorscheme zellner							" colorscheme
-set autoindent                                                          " automatic indentation
-set shiftround								" when shifting, round to shiftwidth multilpy
-set number								" show line number
-set nowrap								" nowrap line when overflow
-set laststatus=2							" show statusline always
+syntax on								                    " enable systax hl
+colorscheme zellner							                " colorscheme
+set autoindent                                              " automatic indentation
+set shiftround								                " when shifting, round to shiftwidth multilpy
+set number								                    " show line number
+set nowrap								                    " nowrap line when overflow
+set laststatus=2							                " show statusline always
 
-set hlsearch								" highlight searches
-set incsearch								" incremental search
-set smartcase								" insensitive case when no mayus
+set hlsearch								                " highlight searches
+set incsearch								                " incremental search
+set smartcase								                " insensitive case when no mayus
 
-set nobackup								" no create backup file
-set noswapfile								" no create swap file
-set noundofile								" no create undo file
+set nobackup								                " no create backup file
+set noswapfile								                " no create swap file
+set noundofile								                " no create undo file
 
 set wildignore=.git,venv
 
+" Yank to clipboard in wsl
+if executable("clip.exe")
+  au TextYankPost * if v:event.operator ==# 'y' | call system("clip.exe", @0) | endif
+endif
+
 " Mappings
-let mapleader = "\<Space>"                                              " space as leader
+let mapleader = "\<Space>"                  " space as leader
 
 nnoremap <leader>H <S-j>
 nnoremap <S-k> 10k
@@ -66,32 +71,32 @@ nnoremap <C-w>p :tabprevious<CR>
 "
 " ack.vim
 " ale
-set omnifunc=ale#completion#OmniFunc                                    " Set function for completions
-let ale_completion_enabled = 1                                          " Enable ale completion
-let ale_fix_on_save = 1                                                 " Run fixers on save
+set omnifunc=ale#completion#OmniFunc                        " Set function for completions
+let ale_completion_enabled = 1                              " Enable ale completion
+let ale_fix_on_save = 1                                     " Run fixers on save
 let ale_fixers = {
 \ 'python': ['black'],
-\}                                                                      " Set fixers based on filetype
+\}                                                          " Set fixers based on filetype
 let ale_linters = {
 \ 'python': ['pylsp', 'flake8'],
-\}                                                                      " Set linters based on filetype
+\}                                                          " Set linters based on filetype
 let ale_python_black_options = '--line-length=79'
 " camelcasemotion
 " ctrlp.vim
-let ctrlp_show_hidden = 1                                               " Show hidden files in ctrlp buffer
+let ctrlp_show_hidden = 1                                   " Show hidden files in ctrlp buffer
 " editorconfig
 " nerdtree
-let NERDTreeMinimalUI = 1                                               " remove help message in nerdtree
-let NERDTreeRespectWildIgnore = 1                                       " use vim wildignore
-let NERDTreeShowHidden = 1                                              " show hidden files
-au VimEnter * NERDTree 							                        " Open NERDTree on startup
+let NERDTreeMinimalUI = 1                                   " remove help message in nerdtree
+let NERDTreeRespectWildIgnore = 1                           " use vim wildignore
+let NERDTreeShowHidden = 1                                  " show hidden files
+au VimEnter * NERDTree 							            " Open NERDTree on startup
 au BufEnter NERD_tree_* if winnr('$') == 1 && b:NERDTree.isTabTree() | q | endif " close if nerd tree is the last buffer
 au BufEnter NERD_tree_* if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif " dont let others to use nerdtree buffer
 " textobj-entire
 " vim-fugitive
 " vim-airline
 " vim-airline-themes
-let airline_theme='light'                                               " set airline theme
+let airline_theme='light'                                   " set airline theme
 " vim-commentary
 " vim-gitgutter
 " vim-surround
@@ -99,4 +104,4 @@ let airline_theme='light'                                               " set ai
 " vim-textobj-python
 " vim-textobj-user
 " vim-tmux-navigator
-let tmux_navigator_save_on_switch = 2                                 " save when change tmux window
+let tmux_navigator_save_on_switch = 2                       " save when change tmux window
