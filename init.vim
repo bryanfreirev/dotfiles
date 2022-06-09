@@ -2,19 +2,21 @@
 syntax on								                    " enable systax hl
 colorscheme zellner							                " colorscheme
 set autoindent                                              " automatic indentation
-set shiftround								                " when shifting, round to shiftwidth multilpy
-set number								                    " show line number
-set nowrap								                    " nowrap line when overflow
-set laststatus=2							                " show statusline always
-
 set hlsearch								                " highlight searches
 set incsearch								                " incremental search
+set laststatus=2							                " show statusline always
+set nowrap								                    " nowrap line when overflow
+set number								                    " show line number
+set shiftround								                " when shifting, round to shiftwidth multilpy
 set smartcase								                " insensitive case when no mayus
+set splitbelow                                              " vertical split below
+set splitright                                              " horizontal split right
 
 set nobackup								                " no create backup file
 set noswapfile								                " no create swap file
 set noundofile								                " no create undo file
 
+set completeopt=noselect,noinsert,menuone,longest
 set wildignore=.git,venv
 
 " Yank to clipboard in wsl
@@ -44,22 +46,6 @@ nnoremap <leader>gp :cprevious<CR>
 nnoremap <leader>dg :diffget<CR>
 nnoremap <leader>dp :diffput<CR>
 
-" camelcase motions
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-map <silent> ge <Plug>CamelCaseMotion_ge
-sunmap w
-sunmap b
-sunmap e
-sunmap ge
-omap <silent> iw <Plug>CamelCaseMotion_iw
-xmap <silent> iw <Plug>CamelCaseMotion_iw
-omap <silent> ib <Plug>CamelCaseMotion_ib
-xmap <silent> ib <Plug>CamelCaseMotion_ib
-omap <silent> ie <Plug>CamelCaseMotion_ie
-xmap <silent> ie <Plug>CamelCaseMotion_ie
-
 " Unused mapping (used by tmux)
 nnoremap <C-w>s :vsplit<CR>
 nnoremap <C-w>v :split<CR>
@@ -81,10 +67,10 @@ let ale_linters = {
 \ 'python': ['pylsp', 'flake8'],
 \}                                                          " Set linters based on filetype
 let ale_python_black_options = '--line-length=79'
-" camelcasemotion
 " ctrlp.vim
 let ctrlp_show_hidden = 1                                   " Show hidden files in ctrlp buffer
-" editorconfig
+" editorconfig-vim
+" fugitive
 " nerdtree
 let NERDTreeMinimalUI = 1                                   " remove help message in nerdtree
 let NERDTreeRespectWildIgnore = 1                           " use vim wildignore
@@ -92,8 +78,6 @@ let NERDTreeShowHidden = 1                                  " show hidden files
 au VimEnter * NERDTree 							            " Open NERDTree on startup
 au BufEnter NERD_tree_* if winnr('$') == 1 && b:NERDTree.isTabTree() | q | endif " close if nerd tree is the last buffer
 au BufEnter NERD_tree_* if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif " dont let others to use nerdtree buffer
-" textobj-entire
-" vim-fugitive
 " vim-airline
 " vim-airline-themes
 let airline_theme='light'                                   " set airline theme
