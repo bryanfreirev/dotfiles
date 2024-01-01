@@ -1,0 +1,116 @@
+{
+  //////////////////////////////////////////////////
+  // Basic
+  //////////////////////////////////////////////////
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.console.closeOnEnd": true,
+  "debug.openExplorerOnEnd": true,
+  "diffEditor.renderSideBySide": false,
+  "explorer.confirmDelete": false,
+  "explorer.fileNesting.enabled": true,
+  "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autoStash": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "search.mode": "reuseEditor",
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.tabs.enabled": true,
+  "window.enableMenuBarMnemonics": false,
+  "window.menuBarVisibility": "toggle",
+  "window.restoreFullscreen": true,
+  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "workbench.activityBar.location": "top",
+  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+  },
+
+  //////////////////////////////////////////////////
+  // Extensions
+  //////////////////////////////////////////////////
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.defaultDateStyle": "absolute",
+
+  "sqltools.useNodeRuntime": true,
+
+  "magit.display-buffer-function": "same-column",
+
+  "vim.camelCaseMotion.enable": true,
+  "vim.easymotion": true,
+  "vim.foldfix": true,
+  "vim.highlightedyank.color": "#eea",
+  "vim.highlightedyank.enable": true,
+  "vim.leader": "<space>",
+  "vim.replaceWithRegister": true,
+  "vim.sneak": true,
+  "vim.useCtrlKeys": false,
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": [ "H" ], "after": [ "J" ] },
+    { "before": [ "J" ], "after": [ "<ctrl+d>" ] },
+    { "before": [ "K" ], "after": [ "<ctrl+u>" ] },
+    { "before": ["<tab>"], "after": ["z", "a"]},
+    { "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
+    { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
+    { "before": [ "u" ], "commands": [ "undo" ] },
+    { "before": [ "U" ], "commands": [ "redo" ] },
+    { "before": ["g", "h"], "commands": ["editor.action.showDefinitionPreviewHover"] },
+    { "before": [ "<leader>", "g", "g" ], "commands": [ "magit.status" ] },
+    { "before": [ "<leader>", "g", "b" ], "commands": [ "magit.blame-file" ] },
+    { "before": [ "<leader>", "g", "d" ], "commands": [ "magit.diff-file" ] },
+  ],
+  "vim.insertModeKeyBindingsNonRecursive": [],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    { "before": [ "J" ], "after": [ "<ctrl+d>" ] },
+    { "before": [ "K" ], "after": [ "<ctrl+u>" ] },
+    { "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
+    { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
+  ],
+
+
+  //////////////////////////////////////////////////
+  // Editing
+  //////////////////////////////////////////////////
+  "editor.bracketPairColorization.enabled": true,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSurroundingLines": 3,
+  "editor.guides.bracketPairs": true,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.quickSuggestions": { "strings": "on" },
+  "editor.rulers": [99],
+  "editor.stickyScroll.enabled": true,
+
+  "files.associations": {"*.css": "tailwindcss"},
+
+  //////////////////////////////////////////////////
+  // Languages
+  //////////////////////////////////////////////////
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+  },
+  "python.testing.pytestEnabled": true,
+
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordSeparators": "`~!@#$%^&*()=+{}\\|;'\",.<>?",
+  },
+
+}
