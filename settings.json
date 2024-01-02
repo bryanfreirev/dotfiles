@@ -1,116 +1,137 @@
 {
-  //////////////////////////////////////////////////
-  // Basic
-  //////////////////////////////////////////////////
-  "debug.allowBreakpointsEverywhere": true,
-  "debug.console.closeOnEnd": true,
-  "debug.openExplorerOnEnd": true,
-  "diffEditor.renderSideBySide": false,
-  "explorer.confirmDelete": false,
-  "explorer.fileNesting.enabled": true,
-  "files.autoSave": "onFocusChange",
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  "git.autoStash": true,
-  "git.confirmSync": false,
-  "git.enableSmartCommit": true,
-  "search.mode": "reuseEditor",
-  "terminal.integrated.persistentSessionReviveProcess": "never",
-  "terminal.integrated.tabs.enabled": true,
-  "window.enableMenuBarMnemonics": false,
-  "window.menuBarVisibility": "toggle",
-  "window.restoreFullscreen": true,
-  "window.title": "${activeEditorMedium}${separator}${rootName}",
-  "workbench.activityBar.location": "top",
-  "workbench.colorTheme": "Visual Studio Light",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.startupEditor": "none",
+    //////////////////////////////////////////////////
+    // Basic
+    //////////////////////////////////////////////////
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.console.closeOnEnd": true,
+    "explorer.confirmDelete": false,
+    "explorer.fileNesting.enabled": true,
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "git.autoStash": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "search.mode": "reuseEditor",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "window.enableMenuBarMnemonics": false,
+    "window.menuBarVisibility": "toggle",
+    "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "workbench.activityBar.location": "top",
+    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "none",
 
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1,
-  },
+    "projectManager.any.baseFolders": ["~/projects"],
+    "projectManager.any.maxDepthRecursion": 1,
 
-  //////////////////////////////////////////////////
-  // Extensions
-  //////////////////////////////////////////////////
-  "gitlens.codeLens.enabled": false,
-  "gitlens.statusBar.enabled": false,
-  "gitlens.defaultDateStyle": "absolute",
-
-  "sqltools.useNodeRuntime": true,
-
-  "magit.display-buffer-function": "same-column",
-
-  "vim.camelCaseMotion.enable": true,
-  "vim.easymotion": true,
-  "vim.foldfix": true,
-  "vim.highlightedyank.color": "#eea",
-  "vim.highlightedyank.enable": true,
-  "vim.leader": "<space>",
-  "vim.replaceWithRegister": true,
-  "vim.sneak": true,
-  "vim.useCtrlKeys": false,
-  "vim.useSystemClipboard": true,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    { "before": [ "H" ], "after": [ "J" ] },
-    { "before": [ "J" ], "after": [ "<ctrl+d>" ] },
-    { "before": [ "K" ], "after": [ "<ctrl+u>" ] },
-    { "before": ["<tab>"], "after": ["z", "a"]},
-    { "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
-    { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
-    { "before": [ "u" ], "commands": [ "undo" ] },
-    { "before": [ "U" ], "commands": [ "redo" ] },
-    { "before": ["g", "h"], "commands": ["editor.action.showDefinitionPreviewHover"] },
-    { "before": [ "<leader>", "g", "g" ], "commands": [ "magit.status" ] },
-    { "before": [ "<leader>", "g", "b" ], "commands": [ "magit.blame-file" ] },
-    { "before": [ "<leader>", "g", "d" ], "commands": [ "magit.diff-file" ] },
-  ],
-  "vim.insertModeKeyBindingsNonRecursive": [],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    { "before": [ "J" ], "after": [ "<ctrl+d>" ] },
-    { "before": [ "K" ], "after": [ "<ctrl+u>" ] },
-    { "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
-    { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
-  ],
-
-
-  //////////////////////////////////////////////////
-  // Editing
-  //////////////////////////////////////////////////
-  "editor.bracketPairColorization.enabled": true,
-  "editor.cursorBlinking": "expand",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.cursorSurroundingLines": 3,
-  "editor.guides.bracketPairs": true,
-  "editor.lineNumbers": "relative",
-  "editor.linkedEditing": true,
-  "editor.minimap.enabled": false,
-  "editor.quickSuggestions": { "strings": "on" },
-  "editor.rulers": [99],
-  "editor.stickyScroll.enabled": true,
-
-  "files.associations": {"*.css": "tailwindcss"},
-
-  //////////////////////////////////////////////////
-  // Languages
-  //////////////////////////////////////////////////
-  "[python]": {
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1,
     },
-  },
-  "python.testing.pytestEnabled": true,
 
-  "[typescript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
-  "[typescriptreact]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.wordSeparators": "`~!@#$%^&*()=+{}\\|;'\",.<>?",
-  },
+    //////////////////////////////////////////////////
+    // Extensions
+    //////////////////////////////////////////////////
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "gitlens.defaultDateStyle": "absolute",
 
+    "sqltools.useNodeRuntime": true,
+
+    "magit.display-buffer-function": "same-column",
+
+    "redhat.telemetry.enabled": false,
+
+    "vim.camelCaseMotion.enable": true,
+    "vim.easymotion": true,
+    "vim.foldfix": true,
+    "vim.highlightedyank.color": "#eea",
+    "vim.highlightedyank.enable": true,
+    "vim.leader": "<space>",
+    "vim.replaceWithRegister": true,
+    "vim.sneak": true,
+    "vim.useCtrlKeys": false,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": [ "H" ], "after": [ "J" ] },
+        { "before": [ "J" ], "after": [ "<ctrl+d>" ] },
+        { "before": [ "K" ], "after": [ "<ctrl+u>" ] },
+        { "before": ["<tab>"], "after": ["z", "a"]},
+        { "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
+        { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
+        { "before": [ "u" ], "commands": [ "undo" ] },
+        { "before": [ "U" ], "commands": [ "redo" ] },
+        { "before": ["g", "h"], "commands": ["editor.action.showDefinitionPreviewHover"] },
+        { "before": [ "<leader>", "g", "g" ], "commands": [ "magit.status" ] },
+        { "before": [ "<leader>", "g", "b" ], "commands": [ "magit.blame-file" ] },
+        { "before": [ "<leader>", "g", "d" ], "commands": [ "magit.diff-file" ] },
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before": [ "J" ], "after": [ "<ctrl+d>" ] },
+        { "before": [ "K" ], "after": [ "<ctrl+u>" ] },
+        { "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
+        { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
+    ],
+
+    //////////////////////////////////////////////////
+    // Editing
+    //////////////////////////////////////////////////
+    "editor.bracketPairColorization.enabled": true,
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorSurroundingLines": 3,
+    "editor.guides.bracketPairs": true,
+    "editor.lineNumbers": "relative",
+    "editor.linkedEditing": true,
+    "editor.minimap.enabled": false,
+    "editor.quickSuggestions": { "strings": "on" },
+    "editor.rulers": [99],
+    "editor.stickyScroll.enabled": true,
+
+    "files.associations": {"*.css": "tailwindcss"},
+    "files.exclude": {
+        "**/.git": true,
+        "**/__pycache__": true,
+        ".*cache": true,
+    },
+
+    //////////////////////////////////////////////////
+    // Languages
+    //////////////////////////////////////////////////
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": { "source.organizeImports": "always" },
+    },
+    "python.analysis.inlayHints.callArgumentNames": "all",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.testing.pytestArgs": ["-vvv", "-o", "addopts="],
+    "python.testing.pytestEnabled": true,
+
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[typescriptreact]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.wordSeparators": "`~!@#$%^&*()=+{}\\|;'\",.<>?",
+    },
+
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    },
+    "markdownlint.config": {"MD007": {"indent": 4}},
+
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+    }
 }
