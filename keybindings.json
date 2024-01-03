@@ -9,7 +9,6 @@
     { "key": "alt+;", "command": "workbench.debug.action.toggleRepl", "when": "inDebugMode" },
     { "key": "alt+a", "command": "workbench.action.findInFiles" },
     { "key": "alt+e", "command": "workbench.action.quickOpen" },
-    { "key": "alt+shift+e", "command": "file-browser.open" },
     { "key": "alt+p", "command": "workbench.action.showCommands" },
 
     //////////////////////////////////////////////////
@@ -68,17 +67,18 @@
     //////////////////////////////////////////////////
     // File explorer
     //////////////////////////////////////////////////
-    // { "key": "alt+shift+e", "command": "workbench.explorer.fileView.focus"},
-    // { "key": "/", "command": "list.find", "when": "listFocus && listSupportsFind" },
-    // { "key": "a", "command": "explorer.newFile", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" },
-    // { "key": "f", "command": "explorer.newFolder", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" },
-    // { "key": "r", "command": "renameFile", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" },
-    // { "key": "x", "command": "filesExplorer.cut", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" },
-    // { "key": "y", "command": "filesExplorer.copy", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus" },
-    // { "key": "p", "command": "filesExplorer.paste", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus" },
-    // { "key": "shift+j", "command": "list.focusPageDown", "when": "listFocus && !inputFocus" },
-    // { "key": "shift+k", "command": "list.focusPageUp", "when": "listFocus && !inputFocus" },
-    // { "key": "alt+l", "command": "runCommands", "args": { "commands": ["workbench.action.focusFirstEditorGroup", "workbench.action.toggleSidebarVisibility"]}, "when": "filesExplorerFocus && !inputFocus"},
+    { "key": "alt+shift+e", "command": "workbench.explorer.fileView.focus"},
+    { "key": "/", "command": "list.find", "when": "listFocus && listSupportsFind" },
+    { "key": "a", "command": "explorer.newFile", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" },
+    { "key": "f", "command": "explorer.newFolder", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" },
+    { "key": "l", "command": "filesExplorer.openFilePreserveFocus", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus" },
+    { "key": "r", "command": "renameFile", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" },
+    { "key": "x", "command": "filesExplorer.cut", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" },
+    { "key": "y", "command": "filesExplorer.copy", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus" },
+    { "key": "p", "command": "filesExplorer.paste", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus" },
+    { "key": "shift+j", "command": "list.focusPageDown", "when": "listFocus && !inputFocus" },
+    { "key": "shift+k", "command": "list.focusPageUp", "when": "listFocus && !inputFocus" },
+    { "key": "alt+l", "command": "runCommands", "args": { "commands": ["workbench.action.focusFirstEditorGroup", "workbench.action.toggleSidebarVisibility"]}, "when": "filesExplorerFocus && !inputFocus"},
 
     //////////////////////////////////////////////////
     // Magit

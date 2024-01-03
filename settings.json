@@ -24,6 +24,7 @@
     "workbench.activityBar.location": "top",
     "workbench.colorTheme": "Visual Studio Light",
     "workbench.iconTheme": "material-icon-theme",
+    "workbench.list.typeNavigationMode": "trigger",
     "workbench.startupEditor": "none",
 
     "projectManager.any.baseFolders": ["~/projects"],
@@ -54,6 +55,7 @@
     "vim.leader": "<space>",
     "vim.replaceWithRegister": true,
     "vim.sneak": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
     "vim.useCtrlKeys": false,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [

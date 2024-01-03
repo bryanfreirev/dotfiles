@@ -1,8 +1,11 @@
-# Managing virtualenvs
-alias w="source ./venv/bin/activate"
-alias we='deactivate'
-alias wc="python -m venv venv"
+##################################################
+# PYTHON
+##################################################
+VENVS_DIR="$HOME/.venvs"
 
-# Testing
-alias t='pytest --no-cov'
-alias td='pytest --no-cov --pdb'
+function w { source $VENVS_DIR/$1/Scripts/activate; }
+function wc { python -m venv $VENVS_DIR/$1; }
+alias we='deactivate'
+
+alias t='pytest -vvv -o addopts='
+alias td='t --pdb --pdbcls=IPython.terminal.debugger:Pdb'
