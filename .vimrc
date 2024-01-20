@@ -36,34 +36,49 @@ let mapleader = " " " space as leader
 
 nnoremap <leader>w :w
 
-nnoremap <S-H> <S-j>
-nnoremap <S-k> 20k
-nnoremap <S-j> 20j
-xnoremap <S-k> 20k
-xnoremap <S-j> 20j
-
-nnoremap <leader>fe :NERDTreeFocus<CR>
-nnoremap <leader>fc :NERDTreeFind<CR>
-nnoremap <leader>fa :Ack!<Space>
-nnoremap <leader>ff :CtrlP<CR>
+nnoremap <s-H> <s-j>
+nnoremap <s-k> 20k
+nnoremap <s-j> 20j
+xnoremap <s-k> 20k
+xnoremap <s-j> 20j
 
 nnoremap gd :ALEGoToDefinition<cr>
 nnoremap gr :ALERename<cr>
-nnoremap <leader>gg :G<CR>
-nnoremap <leader>gn :cnext<CR>
-nnoremap <leader>gp :cprevious<CR>
-nnoremap <leader>dg :diffget<CR>
-nnoremap <leader>dp :diffput<CR>
+nnoremap gh :ALEHover<cr>
+
+nnoremap <leader>fe :NERDTreeMirror<cr>:NERDTreeFocus<cr>
+nnoremap <leader>fc :NERDTreeFind<cr>
+nnoremap <leader>fa :Ack!<Space>
+nnoremap <leader>ff :CtrlP<cr>
+nnoremap <leader>fg :Goyo<cr>
+
+nnoremap <leader>gg :G<cr>
+nnoremap <leader>gn :cnext<cr>
+nnoremap <leader>gp :cprevious<cr>
+
+nnoremap <leader>dg :diffget<cr>
+nnoremap <leader>dp :diffput<cr>
 
 " Unused mapping (used by tmux)
-nnoremap <C-w>s :vsplit<CR>
-nnoremap <C-w>v :split<CR>
-nnoremap <C-w>n :bnext<CR>
-nnoremap <C-w>p :bprevious<CR>
+nnoremap <c-w>s :vsplit<cr>
+nnoremap <c-w>v :split<cr>
+nnoremap <c-w>n :tabnext<cr>
+nnoremap <c-w>p :tabprevious<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """"""""""""""""""""""""""""""""""""""""""""""""""
+" ale
+" set omnifunc=ale#completion#OmniFunc " Set function for completions
+let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
+let g:ale_completion_autoimport = 1
+let g:ale_fixers = {
+\ 'python': ['ruff', 'ruff_format'],
+\}
+let ale_linters = {
+\ 'python': ['ruff', 'pyright'],
+\}
 " ack.vim
 let g:ackprg = 'ag --vimgrep --hidden'
 " ctrlp
@@ -71,8 +86,11 @@ let g:ctrlp_working_path_mode = 'ra' " root directory .git
 let g:ctrlp_user_command = 'ag %s -l --no-color --hidden -g ""'
 " editorconfig-vim
 " fugitive
+" goyo
+let g:goyo_width = 120
+let g:goyo_height = '100%'
+let g:goyo_linenr = 1
 " nerdtree
-
 let g:NERDTreeMinimalUI = 1 " remove help message in nerdtree
 let g:NERDTreeRespectWildIgnore = 1 " use vim wildignore
 let g:NERDTreeShowHidden = 1 " show hidden files
@@ -95,17 +113,6 @@ let g:airline_theme='dark theme with powerline symbols'
 let g:tmux_navigator_save_on_switch = 2 " save when change tmux window
 
 
-"" " ale
-"" set omnifunc=ale#completion#OmniFunc                        " Set function for completions
-"" let ale_completion_enabled = 1                              " Enable ale completion
-"" let ale_fix_on_save = 1                                     " Run fixers on save
-"" let ale_fixers = {
-"" \ 'python': ['black'],
-"" \}                                                          " Set fixers based on filetype
-"" let ale_linters = {
-"" \ 'python': ['pylsp', 'flake8'],
-"" \}                                                          " Set linters based on filetype
-"" let ale_python_black_options = '--line-length=79'
 "" " vim-textobj-argument
 "" " vim-textobj-python
 "" " vim-textobj-user

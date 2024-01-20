@@ -1,4 +1,5 @@
 # Read aliases
+source ~/.bashrc
 source ~/.bash_aliases
 
 # Editor
