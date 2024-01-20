@@ -1,12 +1,10 @@
-# variables
+# Read aliases
+source ~/.bash_aliases
+
+# Editor
 export VISUAL=vim
 export EDITOR=vim
+
+# Extra variables
 export PYTHONDONTWRITEBYTECODE=1
 
-# Set vi mode
-set -o vi
-
-# read bashrc
-source ~/.bashrc
-source ~/.bash_aliases
-source ~/.bash_functions

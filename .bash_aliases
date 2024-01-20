@@ -1,10 +1,11 @@
 # Managing virtualenvs
-alias w="source ./venv/bin/activate"
+VENV_PATH = $HOME/.venvs
+if [!-d $VENV_PATH ]; then; echo mkdir $VENV_PATH; fi
+
 alias we='deactivate'
-alias wc8="python3.8 -m venv venv"
-alias wc9="python3.9 -m venv venv"
-alias wc10="python3.10 -m venv venv"
+function w { source $VENV_PATH/$1/bin/activate }
+function wc { python3 -m venv $VENV_PATH/$1 }
 
 # Testing
-alias t='pytest --no-cov -x'
-alias td='pytest --no-cov -x --pdb'
+alias t='pytest -vvv -o addopts= -x'
+alias td='t --pdb'
